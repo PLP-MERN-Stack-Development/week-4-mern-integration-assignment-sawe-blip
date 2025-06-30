@@ -1,8 +1,14 @@
 const express = require('express');
 const router = express.Router();
+const categoryController = require('../controllers/categoryController');
 
-router.get('/', (req, res) => {
-  res.json({ message: 'Categories route is working!' });
-});
+// Get all categories
+router.get('/', categoryController.getAllCategories);
+
+const { validateCategory } = require('../middleware/validation');
+
+router.post('/', validateCategory, categoryController.createCategory);
+
 
 module.exports = router;
+
