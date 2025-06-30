@@ -1,79 +1,80 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=19868100&assignment_repo_type=AssignmentRepo)
-# MERN Stack Integration Assignment
+ MERN Blog Application
+ Objective
+Build a full-stack MERN (MongoDB, Express.js, React.js, Node.js) blog app demonstrating integration between front-end and back-end components, including API communication, database operations, and state management.
 
-This assignment focuses on building a full-stack MERN (MongoDB, Express.js, React.js, Node.js) application that demonstrates seamless integration between front-end and back-end components.
+ Project Structure
 
-## Assignment Overview
-
-You will build a blog application with the following features:
-1. RESTful API with Express.js and MongoDB
-2. React front-end with component architecture
-3. Full CRUD functionality for blog posts
-4. User authentication and authorization
-5. Advanced features like image uploads and comments
-
-## Project Structure
-
-```
 mern-blog/
 ├── client/                 # React front-end
 │   ├── public/             # Static files
 │   ├── src/                # React source code
-│   │   ├── components/     # Reusable components
-│   │   ├── pages/          # Page components
-│   │   ├── hooks/          # Custom React hooks
-│   │   ├── services/       # API services
-│   │   ├── context/        # React context providers
+│   │   ├── components/     # Reusable components (e.g. PostList, Navbar)
+│   │   ├── pages/          # Page components (e.g. HomePage, PostForm)
+│   │   ├── services/       # API services (e.g. api.js)
 │   │   └── App.jsx         # Main application component
 │   └── package.json        # Client dependencies
 ├── server/                 # Express.js back-end
-│   ├── config/             # Configuration files
-│   ├── controllers/        # Route controllers
-│   ├── models/             # Mongoose models
-│   ├── routes/             # API routes
-│   ├── middleware/         # Custom middleware
-│   ├── utils/              # Utility functions
+│   ├── controllers/        # Route controllers (e.g. postController)
+│   ├── models/             # Mongoose models (e.g. Post.js, Category.js)
+│   ├── routes/             # API routes (e.g. posts.js, categories.js)
 │   ├── server.js           # Main server file
 │   └── package.json        # Server dependencies
 └── README.md               # Project documentation
-```
+ Tasks Completed
+Task 1: Project Setup
+Set up Express.js server and connected to MongoDB using Mongoose
 
-## Getting Started
+Configured CORS, JSON parsing, environment variables, and error handling
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Follow the setup instructions in the `Week4-Assignment.md` file
-4. Complete the tasks outlined in the assignment
+Set up React front-end using Vite
 
-## Files Included
+Configured proxy for API calls
 
-- `Week4-Assignment.md`: Detailed assignment instructions
-- Starter code for both client and server:
-  - Basic project structure
-  - Configuration files
-  - Sample models and components
+Used dotenv for environment config
 
-## Requirements
+Task 2: Back-End Development
+Implemented RESTful API:
 
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- npm or yarn
-- Git
+GET /api/posts, GET /api/posts/:id, POST /api/posts, PUT /api/posts/:id, DELETE /api/posts/:id
 
-## Submission
+GET /api/categories, POST /api/categories
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+Created Post and Category Mongoose models
 
-1. Complete both the client and server portions of the application
-2. Implement all required API endpoints
-3. Create the necessary React components and hooks
-4. Document your API and setup process in the README.md
-5. Include screenshots of your working application
+Added input validation with express-validator
 
-## Resources
+Added error-handling middleware
 
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [Express.js Documentation](https://expressjs.com/)
-- [React Documentation](https://react.dev/)
-- [Node.js Documentation](https://nodejs.org/en/docs/)
-- [Mongoose Documentation](https://mongoosejs.com/docs/) 
+Task 3: Front-End Development
+Built React components:
+
+PostList — list all posts
+
+HomePage — main landing page
+
+Navbar — site navigation
+
+Set up React Router for page navigation
+
+Implemented React hooks (useState, useEffect) for state
+
+Task 4: Integration and Data Flow
+Integrated API service with front-end (api.js)
+
+Connected posts and categories data to UI
+
+Added basic form validation
+
+Implemented loading and error states
+
+Created category filter (in progress)
+
+ How to Run
+Server
+cd server
+npm install
+npm run dev
+Client
+cd client
+npm install
+npm run dev
