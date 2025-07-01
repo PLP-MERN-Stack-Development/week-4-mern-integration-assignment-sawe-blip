@@ -3,11 +3,15 @@ import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import PostPage from './pages/PostPage';
 import NewPostPage from './pages/NewPostPage';
+import CategoryList from "./components/CategoryList";
+
+
 
 export default function App() {
   return (
     <Router>
       <Navbar />
+      <CategoryList />
       <div className="container">
         <Routes>
           <Route path="/" element={<HomePage />} />
